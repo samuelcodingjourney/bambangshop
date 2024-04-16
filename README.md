@@ -25,7 +25,7 @@ The subscribers are another Rocket instances, so the notification will be sent u
 
 ## API Documentations
 
-You can download the Postman Collection JSON here: https://api.postman.com/collections/1518342-1ab29a75-95d2-4e61-a257-0971e15b75a0?access_key=PMAT-01HT9WP343FDK3QKB7HGE2AKHJ
+You can download the Postman Collection JSON here: https://ristek.link/AdvProgWeek7Postman 
 
 After you download the Postman Collection, you can try the endpoints inside "BambangShop Publisher" folder.
 This Postman collection also contains endpoints that you need to implement later on (the `Notification` feature).
@@ -77,7 +77,9 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
-
+1. In the observer pattern diagram explained by the Head First Design Pattern book and also my understanding of Observer design patterns, on BambangShop case a single model struct is enough. This struct model is for Subscriber. This is so that the main app will retain lists of Subscribers that follow a product type. This is because we are doing the push model which is specifically to execute notify() method in the main app to make the HTTP requests to be send to the /receive URL of the receiver app to every Subscriber that subscribed to the relevant product type when notification data must be send based on the three different scenarios of there is a new Product with the same product type, or a product with the same product type is delete dfrom the store or BambangShop promotes a product with the same product type. 
+2. Yes. For examplpe using DashMap for both subscriber and product because DashMap itself can store key and value pairs then it make sense to store each product and subscriber object value that has keys of their id and url. This way when using or trying to check if a product or subscriber exist in the repository it is easier to just call the key and check if the value exist when getting it.
+3. Yes you can implement Singleton pattern in this case but by using DashMap instead, because DashMap abstracts the complexity when managing concurrency, provide better performance, and reduces maintenance overhead making it more robust for managing mutable state in multithreaded Rust applications. By using Singleton pattern, it is not inherently suited to manage thread safety for multithreaded unless using Mutex or RwLock but these could be implemented correctly but stilll can be error-prone and could introduce performance overhead due to locking.  
 #### Reflection Publisher-2
 
 #### Reflection Publisher-3
