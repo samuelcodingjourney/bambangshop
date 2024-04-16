@@ -1,5 +1,5 @@
 pub mod product;
-
+pub mod notification;
 use rocket::fairing::AdHoc;
 
 pub fn route_stage() -> AdHoc {

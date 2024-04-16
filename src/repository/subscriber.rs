@@ -22,7 +22,7 @@ impl SubscriberRepository {
     }
     pub fn list_all(product_type: &str) -> Vec<Subscriber> {
         if SUBSCRIBERS.get(product_type).is_none() {
-            SUBSCRIBERS.insert(String::from(product_type), DashMap::new())
+            SUBSCRIBERS.insert(String::from(product_type), DashMap::new());
         };
         
         return SUBSCRIBERS.get(product_type).unwrap().iter()
